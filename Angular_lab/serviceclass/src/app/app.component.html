@@ -1,0 +1,46 @@
+<h1 align="center">Students Data</h1>
+<table align="center" border="1">
+  <thead>
+    <th>S.no</th>
+    <th>RollNo</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Branch</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let i of students let ind=index">
+      <td>{{ind}}</td>
+      <td>{{i.rollno}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.branch}}</td>
+      <td><input type="button" (click)="delete(ind)" value="Delete"></td>
+  </tr>
+  </tbody>
+</table>
+<div align="center">
+<input type="checkbox" [(ngModel)]="value" >Add student
+</div>
+
+<div *ngIf=value align="center">
+  <table>
+      <tr>
+        <td><input type="text" [(ngModel)]="rollno" placeholder="Enter the rollno"></td>
+      </tr>
+      <tr>
+        <td><input type="text" [(ngModel)]="name" placeholder="Enter the Name"></td>
+      </tr>
+      <tr>
+        <td><input type="text" [(ngModel)]="email" placeholder="Enter the Email"></td>
+      </tr>
+      <tr>
+        <td><input type="text" [(ngModel)]="branch" placeholder="Enter the Branch"></td>
+      </tr>
+      <tr>
+        <td><input type="button" (click)="add()" value="Insert"></td>
+      </tr>
+  </table>
+</div>
+
+
+
